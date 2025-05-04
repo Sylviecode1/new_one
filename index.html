@@ -87,11 +87,14 @@
       object-fit: cover;
       border-radius: 8px;
     }
+    .photo-container {
+      display: none; /* Hide images initially */
+    }
   </style>
 </head>
 <body>
   <video class="video-background" autoplay muted loop>
-    <source src="background-video.mp4" type="video/mp4" />
+    <source src="your-uploaded-video.mp4" type="video/mp4" />
     Your browser does not support the video tag.
   </video>
 
@@ -117,11 +120,11 @@
       Thank you for everything. I love you.<br /><br />
     </div>
 
-    <!-- Photo container with images at the bottom -->
+    <!-- Photo container with images at the bottom (visible only on the last screen) -->
     <div class="photo-container">
-      <img src="photo1.jpg" alt="Mother's Day Image 1" />
-      <img src="photo2.jpg" alt="Mother's Day Image 2" />
-      <img src="photo3.jpg" alt="Mother's Day Image 3" />
+      <img src="photo1.jpg" alt="Mother's Day Photo 1" />
+      <img src="photo2.jpg" alt="Mother's Day Photo 2" />
+      <img src="photo3.jpg" alt="Mother's Day Photo 3" />
     </div>
 
     <div class="footer">Made by your coder girl — Silppi</div>
@@ -133,6 +136,7 @@
     const screen1 = document.getElementById('screen1');
     const screen2 = document.getElementById('screen2');
     const screen3 = document.getElementById('screen3');
+    const photoContainer = document.querySelector('.photo-container'); // photo container element
 
     dice.addEventListener('click', () => {
       message1.innerText = 'Rolling...';
@@ -145,8 +149,10 @@
     function goToCute() {
       screen2.style.display = 'none';
       screen3.style.display = 'flex';
+
+      // Show the images only on the last screen
+      photoContainer.style.display = 'flex';
     }
   </script>
 </body>
 </html>
-
