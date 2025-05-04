@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Mother's Day</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      overflow: hidden;
+    }
+    .screen {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+      transition: all 0.6s ease;
+      position: relative;
+      z-index: 2;
+    }
+    .dice {
+      font-size: 5rem;
+      cursor: pointer;
+      animation: bounce 1s infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    .message {
+      font-size: 1.5rem;
+      margin-top: 20px;
+    }
+    .button {
+      margin-top: 30px;
+      padding: 12px 24px;
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 1.2rem;
+      transition: background 0.3s;
+    }
+    .button:hover {
+      background-color: #ff85c1;
+    }
+    .cute {
+      background: linear-gradient(#ffd9ec, #ffe6f7);
+      color: #4b2c20;
+    }
+    .footer {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      font-size: 0.9rem;
+      color: #888;
+    }
+    /* Video background style */
+    .video-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1; /* Put the video behind everything */
+    }
+    /* photostyling */
+    .image-container img {
+      max-width: 90%;
+      height: auto;
+      border-radius: 10px;
+      margin: 20px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Video Background -->
+  <video class="video-background" autoplay muted loop>
+    <source src="your-uploaded-video.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <div class="screen" id="screen1">
+    <div class="dice" id="dice">🎲</div>
+    <div class="message" id="message1"></div>
+    <div class="footer">Made by your coder girl — Silppi</div>
+
+    <!-- Add an photohere -->
+    <div class="image-container">
+      <img src="photo1.jpg" alt="Mother's Day photo1" />
+    </div>
+  </div>
+
+  <div class="screen cute" id="screen2" style="display: none;">
+    <div class="message">
+      Wee! You got a very smart daughter. <br />
+      And this smart daughter wishes you.<br /><br />
+      <button class="button" onclick="goToCute()">Click Here</button>
+    </div>
+
+    <!-- Add an photohere -->
+    <div class="image-container">
+      <img src="photo2.jpg" alt="Mother's Day photo2" />
+    </div>
+
+    <div class="footer">Made by your coder girl — Silppi</div>
+  </div>
+
+  <div class="screen cute" id="screen3" style="display: none;">
+    <div class="message">
+      Happy Mother's Day, Arati Sahoo!<br />
+      You are an inspiration for me to work hard.<br />
+      Thank you for everything. I love you.<br /><br />
+    </div>
+
+    <!-- Add an photohere -->
+    <div class="image-container">
+      <img src="photo3.jpg" alt="Mother's Day photo3" />
+    </div>
+
+    <div class="footer">Made by your coder girl — Silppi</div>
+  </div>
+
+  <script>
+    const dice = document.getElementById('dice');
+    const message1 = document.getElementById('message1');
+    const screen1 = document.getElementById('screen1');
+    const screen2 = document.getElementById('screen2');
+    const screen3 = document.getElementById('screen3');
+
+    dice.addEventListener('click', () => {
+      message1.innerText = 'Rolling...';
+      setTimeout(() => {
+        screen1.style.display = 'none';
+        screen2.style.display = 'flex';
+      }, 1000);
+    });
+
+    function goToCute() {
+      screen2.style.display = 'none';
+      screen3.style.display = 'flex';
+    }
+  </script>
+</body>
+</html>
