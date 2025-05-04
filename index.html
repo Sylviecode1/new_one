@@ -58,6 +58,7 @@
       color: #4b2c20;
       position: relative;
       overflow: hidden;
+      height: 100vh;
     }
     .footer {
       position: absolute;
@@ -95,88 +96,4 @@
     }
     .photo-container {
       position: absolute;
-      bottom: 100px; /* Raise the images slightly above the bottom */
-      display: flex;
-      justify-content: space-around;
-      width: 100%;
-      gap: 20px;
-      animation: floatHearts 5s infinite;
-    }
-    .photo-container img {
-      width: 200px; /* Make images larger */
-      height: 200px;
-      object-fit: cover;
-      border-radius: 10px;
-    }
-    .photo-container {
-      display: none; /* Hide images initially */
-    }
-  </style>
-</head>
-<body>
-  <video class="video-background" autoplay muted loop>
-    <source src="your-uploaded-video.mp4" type="video/mp4" />
-    Your browser does not support the video tag.
-  </video>
-
-  <div class="screen" id="screen1">
-    <div class="dice" id="dice">🎲</div>
-    <div class="message" id="message1">Click on the dice or roll the dice by clicking!</div>
-    <div class="footer">Made by your coder girl — Silppi</div>
-  </div>
-
-  <div class="screen cute" id="screen2" style="display: none;">
-    <div class="message">
-      Wee! You got a very smart daughter. <br />
-      And this smart daughter wishes you.<br /><br />
-      <button class="button" onclick="goToCute()">Click Here</button>
-    </div>
-    <div class="footer">Made by your coder girl — Silppi</div>
-  </div>
-
-  <div class="screen cute" id="screen3" style="display: none;">
-    <div class="message">
-      Happy Mother's Day, Arati Sahoo!<br />
-      You are an inspiration for me to work hard.<br />
-      Thank you for everything. I love you.<br /><br />
-    </div>
-
-    <!-- Floating Hearts Effect -->
-    <div class="hearts">❤️❤️❤️</div>
-
-    <!-- Photo container with images at the bottom (visible only on the last screen) -->
-    <div class="photo-container">
-      <img src="photo1.jpg" alt="Mother's Day Photo 1" />
-      <img src="photo2.jpg" alt="Mother's Day Photo 2" />
-      <img src="photo3.jpg" alt="Mother's Day Photo 3" />
-    </div>
-
-    <div class="footer">Made by your coder girl — Silppi</div>
-  </div>
-
-  <script>
-    const dice = document.getElementById('dice');
-    const message1 = document.getElementById('message1');
-    const screen1 = document.getElementById('screen1');
-    const screen2 = document.getElementById('screen2');
-    const screen3 = document.getElementById('screen3');
-    const photoContainer = document.querySelector('.photo-container'); // photo container element
-
-    dice.addEventListener('click', () => {
-      message1.innerText = 'Rolling...';
-      setTimeout(() => {
-        screen1.style.display = 'none';
-        screen2.style.display = 'flex';
-      }, 1000);
-    });
-
-    function goToCute() {
-      screen2.style.display = 'none';
-      screen3.style.display = 'flex';
-
-      // Show the images only on the last screen
-      photoContainer.style.display = 'flex';
-    }
-  </script>
-</body>
-</html>
+      bottom
