@@ -25,7 +25,6 @@
       padding: 20px;
       transition: all 0.6s ease;
       position: relative;
-      z-index: 2;
     }
     .dice {
       font-size: 5rem;
@@ -65,29 +64,34 @@
       font-size: 0.9rem;
       color: #888;
     }
-    /* Video background style */
-    .video-background {
+    video.video-background {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      z-index: -1; /* Put the video behind everything */
+      z-index: -1;
     }
-    /* photostyling */
-    .image-container img {
-      max-width: 90%;
-      height: auto;
-      border-radius: 10px;
-      margin: 20px;
+    .photo-container {
+      position: absolute;
+      bottom: 20px;
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      gap: 10px;
+    }
+    .photo-container img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
     }
   </style>
 </head>
 <body>
-  <!-- Video Background -->
   <video class="video-background" autoplay muted loop>
-    <source src="your-uploaded-video.mp4" type="video/mp4" />
+    <source src="background-video.mp4" type="video/mp4" />
     Your browser does not support the video tag.
   </video>
 
@@ -95,11 +99,6 @@
     <div class="dice" id="dice">🎲</div>
     <div class="message" id="message1"></div>
     <div class="footer">Made by your coder girl — Silppi</div>
-
-    <!-- Add an photohere -->
-    <div class="image-container">
-      <img src="photo1.jpg" alt="Mother's Day photo1" />
-    </div>
   </div>
 
   <div class="screen cute" id="screen2" style="display: none;">
@@ -108,12 +107,6 @@
       And this smart daughter wishes you.<br /><br />
       <button class="button" onclick="goToCute()">Click Here</button>
     </div>
-
-    <!-- Add an photohere -->
-    <div class="image-container">
-      <img src="photo2.jpg" alt="Mother's Day photo2" />
-    </div>
-
     <div class="footer">Made by your coder girl — Silppi</div>
   </div>
 
@@ -124,9 +117,11 @@
       Thank you for everything. I love you.<br /><br />
     </div>
 
-    <!-- Add an photohere -->
-    <div class="image-container">
-      <img src="photo3.jpg" alt="Mother's Day photo3" />
+    <!-- Photo container with images at the bottom -->
+    <div class="photo-container">
+      <img src="photo1.jpg" alt="Mother's Day Image 1" />
+      <img src="photo2.jpg" alt="Mother's Day Image 2" />
+      <img src="photo3.jpg" alt="Mother's Day Image 3" />
     </div>
 
     <div class="footer">Made by your coder girl — Silppi</div>
@@ -154,3 +149,4 @@
   </script>
 </body>
 </html>
+
